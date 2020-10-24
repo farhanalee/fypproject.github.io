@@ -1,0 +1,465 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+  <title>
+	Bise Sindh</title>
+    <script type="text/javascript">
+
+        function Validate1() {
+            var rollno = document.getElementById('txtFormNo').value;
+            if (rollno == "") {
+                document.getElementById('lblError').innerText = "Enter RollNo No Please";
+                return false;
+            }
+            if (!isInteger(rollno)) {
+                document.getElementById('lblError').innerText = "Invalid RollNo No";
+                return false;
+            }
+            else {
+
+                return true;
+            }
+        }
+
+
+
+
+        function isString(textObj) {
+            var newValue = textObj;
+            var newLength = newValue.length;
+            var extraChars = ". -,";
+
+            var search;
+            for (var i = 0; i != newLength; i++) {
+                aChar = newValue.substring(i, i + 1);
+                aChar = aChar.toUpperCase();
+                search = extraChars.indexOf(aChar);
+                if (search == -1 && (aChar < "A" || aChar > "Z")) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function isInteger(s) {
+            var i;
+            for (i = 0; i < s.length; i++) {
+                // Check that current character is number.
+                var c = s.charAt(i);
+                if (((c < "0") || (c > "9"))) return false;
+            }
+            // All characters are numbers.
+            return true;
+        }
+
+    </script>
+    <style type="text/css">
+        .MaskedEditError
+        {
+            background-color: Red;
+        }
+        .textBoxes
+        {
+            text-transform: uppercase;
+        }
+        .textBoxes
+        {
+            font-size: 16px;
+            text-transform: uppercase;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 8px;
+            color: Black;
+        }
+        .textBoxes1
+        {
+            text-transform: uppercase;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            color: Black;
+            background-color: #DBE5F1;
+        }
+        .style4
+        {
+            height: 101px;
+            width: 7%;
+        }
+        .td {
+    border-radius: 8px;
+    background-color: #89B58B;
+    color: black;
+    border: 2px solid darkgreen;
+}​
+.button3 {border-radius: 8px;}
+.button {
+        border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            width: 180px;
+            height: 45px;
+            font-family: TimesNewRoman;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: white;
+   background-color: #1C4D24;
+            border-radius: 5px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+}
+.button:hover {
+  background-color: #89B58B;
+  box-shadow: 0px 15px 20px rgba(137, 181, 139, 1);
+  color: #fff;
+  transform: translateY(-7px);
+}
+ .radioButtonList input {
+    opacity: 0;
+    position: absolute;
+}
+
+.radioButtonList input, .radioButtonList label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.radioButtonList label {
+    position: relative;
+    font-size: 20px;
+}
+/* Edit the properties below to change the colors of the un-checked radio button */
+.radioButtonList input + label:before {
+    content: '';
+    background: #1C4D24;
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    line-height:15px;
+    margin-right: 10px;
+    text-align: center;
+
+}
+
+.radioButtonList input + label:before {
+    border-radius: 50%;
+}
+/* Edit the properties below to change the colors of the checked radio button */
+.radioButtonList input:checked + label:before {
+    content: '✓';
+    font-family: 'FontAwesome';
+    color: white;
+    font-weight: bold;
+}
+
+.radioButtonList input:focus + label {
+  outline: 1px solid #ddd; /* focus style */
+}
+
+        #form1
+        {
+            text-align: center;
+        }
+        .style9
+        {
+            width: 352px;
+            height: 101px;
+        }
+        .style10
+        {
+            left: auto;
+            height: 17px;
+        }
+        .style13
+        {
+            height: 9px;
+        }
+        .style16
+        {
+            text-align: left;
+            width: 90%;
+            height: 17px;
+        }
+        .style17
+        {
+            width: 35%;
+            text-align: left;
+            height: 9px;
+        }
+        .style18
+        {
+            text-align: left;
+            width: 90%;
+            height: 3px;
+        }
+        .style19
+        {
+            width: 35%;
+            text-align: left;
+            height: 3px;
+            font-weight: 700;
+            background-color: #89B58B;
+        }
+        .style20
+        {
+            width: 80%;
+            height: 75px;
+        }
+    </style>
+</head>
+<body style="background-image: url('images/resultbg.jpg');
+
+    <form method="post" action="" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTU0NzM2ODAxM2QYAQUJdHh0Rm9ybU5vDw88KwAHAGRkpgvwUIw4VhNTNgXPMH25F3kxvGXq3oRa2C4HsqSh1NE=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=gebnVv6dDXArAJ9i76u_Ic9du68aAeWSNM3Zug9wQpiFogQF8Ia7aqqfvy0Ql_bIT57OxLbhKIApXgr5n2dt6qMc9wU4F7kYd_TJgIDFPck1&amp;t=635589615571259667" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=N-Cp-t9k6xux4lkFa_JZ_abRIqz-hxhWacXVXPBf--0Lw609QyxIYsfl56ed0pNSayNusFHgfnEjtS15dZ4D8yzWLWxCBNiIOffJcOv8IyKpgj5Y0KhdY-uejNKM3zNsfhh0_2ho29qb6PdKiLvWXA2&amp;t=986e08f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=hFbWXZgd7XbD-SNqVe0nr3hbotS5266qawjCFpH3ooYXW_Ho0LBL4fn9m3iYXq18atlyHNT166xvKdIrBBUIE12zbsYRy9zg12tlwrBZhhzeqE0zl5biZ4dyemNlC7OP0n1TXSVvjRNTd_K86PJJaQ2&amp;t=986e08f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=sf4jbDxgvl6-JVGrElJRu-BymeSW9JMY1qJqy78aBUiv_Lth19z8RR9PXZjcEyOyVp1vOpu0nFqzv6IvJoJX2e9GwM1osnLIYARiJ-AP9Cf4fGNp1W3eOqXQ6QhRVR8qKChCl1HDz56BoifoOZLB9w2&amp;t=986e08f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_-EPR2Bmx4_aUfIhkVAafpMqyXkDnQbM9zl_ZivVKmucir7SoeJecvlzX3QlIZXh7v9-446h5ie1sydtD8cBPXYfODr9fvfHAC5KvDVVLdFXkdQO3pVNSrH9x41Jy7Cq4owSnBlunssnRlaZ9ikKbA2&amp;t=734d43f5" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=ptfvP4GiIXv4uJCGvKgoDWNmoS6ZdZrZy69JoZ7I-tasyOES8mN_wZUrQS4kvCaag0HtK35aqFb810OhNtUHRZJx14rUXs7UY76J_iUBx1wVhtGoROzP_vCQW8HNv4gxD5U_06QBodZ8DmbO9lf1Yw2&amp;t=734d43f5" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var PageMethods = function() {
+PageMethods.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+PageMethods.prototype = {
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return PageMethods._staticInstance.get_path();},
+GetPassword:function(cateogryID,succeededCallback, failedCallback, userContext) {
+/// <param name="cateogryID" type="Number">System.Int32</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetPassword',false,{cateogryID:cateogryID},succeededCallback,failedCallback,userContext); }}
+PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
+PageMethods._staticInstance = new PageMethods();
+PageMethods.set_path = function(value) {
+PageMethods._staticInstance.set_path(value); }
+PageMethods.get_path = function() {
+/// <value type="String" mayBeNull="true">The service url.</value>
+return PageMethods._staticInstance.get_path();}
+PageMethods.set_timeout = function(value) {
+PageMethods._staticInstance.set_timeout(value); }
+PageMethods.get_timeout = function() {
+/// <value type="Number">The service timeout.</value>
+return PageMethods._staticInstance.get_timeout(); }
+PageMethods.set_defaultUserContext = function(value) {
+PageMethods._staticInstance.set_defaultUserContext(value); }
+PageMethods.get_defaultUserContext = function() {
+/// <value mayBeNull="true">The service default user context.</value>
+return PageMethods._staticInstance.get_defaultUserContext(); }
+PageMethods.set_defaultSucceededCallback = function(value) {
+ PageMethods._staticInstance.set_defaultSucceededCallback(value); }
+PageMethods.get_defaultSucceededCallback = function() {
+/// <value type="Function" mayBeNull="true">The service default succeeded callback.</value>
+return PageMethods._staticInstance.get_defaultSucceededCallback(); }
+PageMethods.set_defaultFailedCallback = function(value) {
+PageMethods._staticInstance.set_defaultFailedCallback(value); }
+PageMethods.get_defaultFailedCallback = function() {
+/// <value type="Function" mayBeNull="true">The service default failed callback.</value>
+return PageMethods._staticInstance.get_defaultFailedCallback(); }
+PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
+PageMethods.get_enableJsonp = function() {
+/// <value type="Boolean">Specifies whether the service supports JSONP for cross domain calling.</value>
+return PageMethods._staticInstance.get_enableJsonp(); }
+PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
+PageMethods.get_jsonpCallbackParameter = function() {
+/// <value type="String">Specifies the parameter name that contains the callback function name for a JSONP request.</value>
+return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
+PageMethods.set_path("default.aspx");
+PageMethods.GetPassword= function(cateogryID,onSuccess,onFailed,userContext) {
+/// <param name="cateogryID" type="Number">System.Int32</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+PageMethods._staticInstance.GetPassword(cateogryID,onSuccess,onFailed,userContext); }
+//]]>
+</script>
+
+<script src="/WebResource.axd?d=hZeqFQfYNygIbxb-FAm19TXhLIthyEFec0L-dprV8sgW6IEVw61X6KYE9oEn4927PS8WdgR76_R-mTtOjlSpFQ76vEfF_a5Q6n55S5dHFEI1&amp;t=635589615571259667" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+    <table width="500" align="center">
+        <tr>
+            <td class="style4">
+                &nbsp;<img src="sindhlogo.png"
+                    style="height: 100px; width: 127px; text-align: center;" /></td>
+            <td style="font-size: 48px;" class="style9">
+                BISE Sindh<center style="font-family: 'Times New Roman', Times, serif; font-size: small">
+                    Board of Intermediate and Secondary Education, Sindh</center>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" align="center" >
+                <div id="Pnl1" class="td" style="background-color:#F2F2F2;border-color:#9EB060;border-style:Groove;height:396px;width:78%;">
+
+                    <table style="width: 73%; height: 360px" align="center" cellspacing ="5">
+                        <tr>
+                            <td style="width: 80%; height: 26px; text-align: center;" align="left" colspan="2">
+                                <label id="lblError" style="color: #45824E; font-family: &#39;Times New Roman&#39;, Times, serif;
+                                    font-size: x-large; font-weight: bold;">
+                                    Previous Results</label>
+                                    <hr color="darkgreen">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2" style="width: 80%; height: 26px; ">
+                                <table id="rdlistCourse" class="radioButtonList">
+		<tr>
+			<td><input id="rdlistCourse_0" type="radio" name="rdlistCourse" value="SSC" /><label for="rdlistCourse_0">Matric</label></td><td><input id="rdlistCourse_1" type="radio" name="rdlistCourse" value="HSSC" checked="checked" /><label for="rdlistCourse_1">Intermediate</label></td>
+		</tr>
+	</table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" colspan="2" style="width: 80%; height: 26px">
+                               <hr color="darkgreen">
+
+                            </td>
+                        </tr>
+                        <tr >
+                            <td class="td" style="font-weight: bold">
+                                RollNo:
+                            </td>
+                            <td class="style16">
+                                <input name="txtFormNo" type="text" maxlength="6" id="txtFormNo" class="textBoxes" autocomplete="off" onchange="NumericBox_FindItem(&#39;txtFormNo&#39;).OnTextChange(this);" onkeypress="return NumericBox_FindItem(&#39;txtFormNo&#39;).AddNumericItem(event, this);" style="width:100%;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td" style="font-weight: bold">
+                                ExamType
+                            </td>
+                            <td align="center" style="text-align: left" class="style13">
+                                <select name="ddlExamType" id="ddlExamType" class="textBoxes" style="width:100%;">
+		<option value="2">Part-II (ANNUAL)</option>
+		<option value="1">Part-I (ANNUAL)</option>
+		<option value="0">Supplementary</option>
+
+	</select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td" style="font-weight: bold">
+                                Year:
+                            </td>
+                            <td class="style18">
+                                <select name="ddlExamYear" id="ddlExamYear" class="textBoxes" style="width:100%;">
+		<option value="2020">2020</option>
+		<option value="2019">2019</option>
+		<option value="2018">2018</option>
+		<option value="2017">2017</option>
+		<option value="2016">2016</option>
+		<option value="2015">2015</option>
+		<option value="2014">2014</option>
+		<option value="2013">2013</option>
+		<option value="2012">2012</option>
+		<option value="2011">2011</option>
+		<option value="2010">2010</option>
+		<option value="2009">2009</option>
+		<option value="2008">2008</option>
+		<option value="2007">2007</option>
+
+	</select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;" align="left" colspan="2" class="style20" >
+                            <hr color="darkgreen">
+                                <input type="submit" name="Button1" value="View Result" onclick="return Validate1();" id="Button1" class="button" />
+                            </td>
+                        </tr>
+                    </table>
+
+</div>
+            </td>
+        </tr>
+        <tr>
+            <td id="lblError2" style="color: Red" colspan="2" align="center">
+            </td>
+
+        </tr>
+
+        </table>
+    <center style="font-family: 'Times New Roman', Times, serif; font-size:  small">
+        <label>
+            Powered by: Farhan Ali (FYP 2k17)</label>
+    </center>
+
+<script type="text/javascript">
+//<![CDATA[
+var eWorld_UI_NumericBoxes =  new Array('txtFormNo');
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var txtFormNo = document.all ? document.all["txtFormNo"] : document.getElementById("txtFormNo");
+txtFormNo.numericBox = "new NumericBox_Item(\'txtFormNo\', true, false, \"^[-]?\\\\d*(\\\\.\\\\d*)?$\", -1, \'$\', \'.\', \',\', -1, \'\', false)";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var eWorld_NumericBox_Items = new Array(); NumericBox_InitializeCompatibility();WebForm_AutoFocus('txtFormNo');//]]>
+</script>
+</form>
+</body>
+</html>
